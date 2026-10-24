@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "HTML Presentation Studio — Live Demo",
+  "slides": [
+    {"id": "s01-cover", "title": "封面", "label": "INTRO"},
+    {"id": "s02-architecture", "title": "系統架構", "label": "ARCHITECTURE"},
+    {"id": "s03-workflow", "title": "協作流程", "label": "WORKFLOW"},
+    {"id": "s04-precision", "title": "精準修改", "label": "DEMONSTRATION"}
+  ]
+}
