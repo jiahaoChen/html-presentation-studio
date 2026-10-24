@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML Presentation Studio</title>
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/editor.css" />
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="brand-name"><strong>SLIDE<span>CRAFT</span></strong><small>AGENT-NATIVE WORKSPACE</small></div>
+      <div class="top-divider"></div>
+      <div class="deck-name" id="deck-name">HTML Presentation Studio</div>
+      <span class="version-tag">MVP / 0.1</span>
+      <div class="top-spacer"></div>
+      <span class="save-indicator" id="save-status"><span class="status-dot"></span> 已載入</span>
+      <button id="save" class="btn primary" type="button" title="只儲存目前投影片 (Ctrl/Cmd+S)">儲存此頁</button>
+      <button id="export" class="btn secondary" type="button">匯出 HTML ↓</button>
+      <button id="present" class="btn dark" type="button">▶ 播放</button>
+    </header>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="side-heading"><span>投影片 <span id="slide-total">00</span></span><span class="tiny-label">PAGES</span></div>
+        <div id="slide-list" class="slide-list" aria-label="投影片頁面清單"></div>
+        <div class="side-bottom"><span class="status-dot"></span><div>每頁獨立 HTML<small>可追蹤的版本與變更</small></div></div>
+      </aside>
+      <main class="main-area" id="main-area">
+        <div class="stage-toolbar">
+          <div class="breadcrumb">WORKSPACE <span>/</span> <strong id="current-title">投影片</strong></div>
+          <div class="toolbar-spacer"></div>
+          <span class="tip-badge">選取元素後拖曳；雙擊編輯文字</span>
+          <div class="divider-v"></div>
+          <button id="prev" class="icon-btn" title="上一頁" aria-label="上一頁">‹</button>
+          <span id="page-indicator" class="page-indicator">01 / 04</span>
+          <button id="next" class="icon-btn" title="下一頁" aria-label="下一頁">›</button>
+        </div>
+        <div id="viewport" class="viewport">
+          <div id="stage-holder" class="stage-holder">
+            <div id="slide-stage" class="slide-stage" aria-label="投影片編輯畫布"></div>
+          </div>
+        </div>
+        <div class="stage-footer"><span><span class="footer-dot"></span> 1280 × 720 · 16:9</span><span>雙擊文字可直接編輯 · 單擊選取並拖曳 · 右側可調尺寸</span><span id="zoom-value">100%</span></div>
+      </main>
+      <aside class="inspector" id="inspector">
+        <div class="inspector-heading"><div><span class="inspector-eyebrow">PROPERTY PANEL</span><h2>元件屬性</h2></div><span class="cube-icon">▣</span></div>
+        <div class="inspector-content">
+          <div class="section-title">目前頁面</div>
+          <div class="identity"><label>SLIDE ID</label><code id="slide-id">—</code></div>
+          <div class="element-empty" id="empty-selection"><div class="element-empty-icon">◩</div><strong>尚未選擇元件</strong><p>點選畫布上的文字、圖卡或圖表，即可調整它的位置、尺寸與內容。</p></div>
+          <div id="property-form" hidden>
+            <div class="section-title with-gap">選取的元件</div>
+            <div class="identity"><label>ELEMENT ID</label><code id="element-id">—</code></div>
+            <div class="field" id="text-field"><label for="element-text">文字內容</label><textarea id="element-text" rows="4" spellcheck="false"></textarea></div>
+            <div class="section-title with-gap">位置與尺寸 <span>px</span></div>
+            <div class="field-grid">
+              <div class="field"><label for="pos-x">X</label><input id="pos-x" type="number" step="1" /></div>
+              <div class="field"><label for="pos-y">Y</label><input id="pos-y" type="number" step="1" /></div>
+              <div class="field"><label for="size-w">寬度</label><input id="size-w" type="number" min="10" step="1" /></div>
+              <div class="field"><label for="size-h">高度</label><input id="size-h" type="number" min="10" step="1" /></div>
+            </div>
+            <div class="section-title with-gap">文字樣式</div>
+            <div class="field-grid">
+              <div class="field"><label for="font-size">字級 (px)</label><input id="font-size" type="number" min="10" max="160" step="1" /></div>
+              <div class="field"><label for="font-color">字體顏色</label><input id="font-color" type="color" value="#132a4c" /></div>
+            </div>
+            <div class="inspector-hint">元件 ID 保持不變，方便 AI Agent 精準定位。</div>
+          </div>
+        </div>
+        <div class="inspector-bottom"><strong>AGENT TARGET</strong><pre id="agent-target">選取元件後，這裡將顯示 AI 修改座標。</pre><button id="copy-target" class="copy-btn" type="button" disabled>複製定位資訊</button></div>
+      </aside>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
