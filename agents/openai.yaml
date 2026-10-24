@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Presentation Studio"
+  short_description: "Precisely edit individual HTML slides and verify the result"
+  brand_color: "#176AF2"
