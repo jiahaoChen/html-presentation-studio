@@ -1,0 +1,25 @@
+:root { --ink: #0e203b; --muted: #64748b; --blue: #146af3; --teal: #08a89b; --amber: #d9912f; }
+.slide-page { box-sizing:border-box; display:block; position:relative; width:1280px; height:720px; overflow:hidden; border-radius:22px; background:#fff; color:var(--ink); font-family:'Inter','Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif; font-synthesis:none; box-shadow:0 22px 70px #07172e20; user-select:none; }
+.slide-page *, .slide-page *::before, .slide-page *::after {box-sizing:border-box}
+.slide-page[hidden]{display:none!important}
+.slide-page .element{position:absolute; margin:0; box-sizing:border-box;}
+.slide-page .text{white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.28;}
+.slide-page .eyebrow{font-size:17px;font-weight:800;letter-spacing:3px;color:#2871bd;}
+.slide-page .soft-line{height:2px;background:linear-gradient(90deg,#146af3,transparent)}
+.slide-page .chip{display:flex;align-items:center;gap:12px;border-radius:999px;background:#eaf2ff;color:#2667c2;font-weight:700;padding:9px 17px;font-size:17px;}
+.slide-page .panel{background:#f4f7fc;border:1px solid #e2eaf3;border-radius:20px;}
+.slide-page .num{font-variant-numeric:tabular-nums}
+.slide-page .panel-title{font-size:22px;font-weight:850;color:#1c3558}
+.slide-page .panel-desc{font-size:18px;line-height:1.45;color:#62718a}
+.slide-page .accent-bar{height:5px;border-radius:4px;background:#1976ff}
+.slide-page.dark-slide{background:radial-gradient(circle at 83% 12%,#254b84 0%,transparent 35%),linear-gradient(130deg,#0a1831 5%,#142b50 95%);color:#edf4ff}
+.slide-page.dark-slide .eyebrow{color:#76b5ff}
+.slide-page .grid-bg{background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:34px 34px}
+.slide-page .metric-pill{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 15px;border:1px solid #d7e5f7;background:#f3f8ff;border-radius:12px;color:#2b69b8;font-size:17px;font-weight:750}
+.slide-page .flow-card{border-radius:18px;background:#fff;border:1px solid #dce6f3;box-shadow:0 7px 22px #1a3a6814;padding:25px}
+.slide-page .flow-card h3{font-size:23px;margin:0 0 14px;color:#133153}
+.slide-page .flow-card p{font-size:17px;line-height:1.5;margin:0;color:#65758b}
+.slide-page .flow-icon{font-size:32px;color:#096ce5;margin-bottom:22px}
+.slide-page .corner-mark{width:10px;height:10px;border-radius:50%;background:#24d6bd;box-shadow:0 0 0 8px #24d6bd24;animation:breathe 2.7s ease-in-out infinite}
+@keyframes breathe{50%{box-shadow:0 0 0 15px #24d6bd08}}
+@media (prefers-reduced-motion:reduce){.slide-page .corner-mark{animation:none}}
